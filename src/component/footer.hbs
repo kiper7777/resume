@@ -1,0 +1,33 @@
+{{! 
+  Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+  І котрий обгортає код container файлів для будь-яких ендпоїнтів
+}}
+  {{> nav}}
+
+  {{#with footer}}
+  <footer>
+    <hr />
+    <br />
+	<div>
+		{{#with social}}
+			{{> link text=email.text href=email.href blank=true }}
+			{{> link text=phone.text href=phone.href blank=true }}
+			{{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}  
+                {{#if noLine}}
+                {{/if}}
+	  {{/with}}
+	</div>
+  {{firsname}} 
+  {{lastname}}
+  {{address}}
+
+	<br>
+	<div>
+		<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
+	</div>
+	<br>
+	<div>{{../header/address}}</div>
+  </footer>
+  {{/with}}
+
+</html>
