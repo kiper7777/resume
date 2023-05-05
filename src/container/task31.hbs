@@ -1,14 +1,161 @@
 <div>
   <ul>
     {{#with navigation}}
-      {{links.text}}
-      {{links.href}}
-    {{/with}}
-  </ul>
-  <ul>
-    {{#with button}}
-      {{button.text}}
-      {{button.href}}
+      {{#each links}}
+        <div>{{> link text=text href=href blank=true noLine=true}}</div>
+      {{/each}}
+
+    <div>
+      {{#with button}}
+        <div>{{> link text=text href=href blank=true noLine=true}}</div>
+      {{/with}}
+    </div>
     {{/with}}
   </ul>
 </div>
+
+<br>
+
+<div>
+    <ul>
+        {{#with header}}
+          <div>{{title}}</div>
+          <div>{{description}}</div>
+					{{#with button}}
+							<div>{{> link text=text href=link blank=true noLine=true}}</div>
+					{{/with}}
+        {{/with}}
+    </ul>
+</div>
+
+<br>
+<div>
+    <ul>
+        <div>
+        {{#with city}}
+            <h5>{{title}}</h5>
+						<br>
+            {{#each cards}}
+                {{#with picture}}
+                    <div>{{> link text=alt href=src blank=true noLine=true}}</div>
+                {{/with}}
+                <h6>{{title}}</h6>
+                <div>{{description}}</div>
+                    {{#with button}}
+                    <div>{{> link text=text href=href blank=true noLine=true}}</div> 
+                    {{/with}}
+            <div>{{> link text=text href=link blank=true noLine=true}}</div>
+            {{/each}}
+        {{/with}}
+        </div>
+    </ul>
+</div>
+<br>
+<div>
+	<ul>
+		{{#with winner}}
+		   <h5>{{title}}</h5>
+			 <br>
+			 {{#with table}}
+			    {{#each head}}
+					   {{this}}
+					{{/each}}
+					{{#each user}}
+					   <ul>
+								{{place}}
+								{{name}}
+								{{surname}}
+								{{nickname}}
+							</ul>
+					{{/each}}
+			 {{/with}}
+		{{/with}}
+	</ul>
+</div>
+<br>
+<div>
+	<ul>
+		{{#with gallery}}
+		  <h5>{{title}}</h5>
+			<br>
+			{{#each cards}}
+			  
+            <h6>{{name}}</h6>
+						<ul>
+               {{#each items}}
+								<li>
+									{{this}} 
+								</li>
+						   {{/each}}
+						</ul>
+			{{/each}}
+		{{/with}}
+	</ul>
+</div>
+<br>
+<div>
+  <ul>
+		{{#with relaxion}}
+		  <h5>{{title}}</h5>
+			<br>
+			{{#each cards}}
+			    <h6>{{header}}</h6>
+					<div>{{title}}</div>
+					<div>{{description}}</div>
+			{{/each}}		
+		{{/with}}
+	</ul>
+</div>
+<br>
+<div>
+	<ul>
+		{{#with rest}}
+		   {{#each cards}}
+			    <h5>{{header}}</h5>
+					<div>{{title}}</div>
+					<div>{{description}}</div>
+					<br>
+					<div class="btn btn-info">{{button}}</div>
+					<div>{{footer}}</div>
+			 {{/each}}
+		{{/with}}
+	</ul>
+</div>
+<br>
+<div>
+	<ul>
+		{{#with proposition}}
+		   <h5>{{title}}</h5>
+			 <br>
+			 {{#each card}}
+			    <h6>{{header}}</h6>
+					<div>{{title}}</div>
+					<div>{{description}}</div>
+					<br>
+			 {{/each}}
+		{{/with}}
+	</ul>
+</div>
+<br>
+<div>
+	<ul>
+		{{#with footer}}
+		   <h6>{{title}}</h6>
+			 {{#each navigation}}
+			    <div>{{> link text=text href=href blank=true noLine=true}}</div>
+			 {{/each}}
+			 <br>
+			 <h6>SocialMedia</h6>
+			 {{#each socialMedia}}
+			    <div>{{> link text=name href=link blank=true noLine=true}}</div>
+			 {{/each}}
+			 <br>
+			 <h6>Partners</h6>
+			 {{#each partners}}
+			    <div>{{> link text=name href=link blank=true noLine=true}}</div>
+			 {{/each}}
+		{{/with}}
+	</ul>
+</div>
+
+  
