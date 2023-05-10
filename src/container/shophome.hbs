@@ -68,21 +68,29 @@
     {{#each cards}}
           <div class='col-4'>
             <div class='card'>
-              <img
+              <img class='card-img-top'/>
                 href={{image}}
-                class='card-img-top'/>
 
               <div class='card-body'>
-                <h5 class='card-title' 
-                {{#if isHot}}<span class="badge bg-warning text-light">HOT</span>{{/if}}
-                {{#if isNew}}<span class="badge bg-primary text-light">New</span>{{/if}}
-                >{{title}}</h5>
+                <h5 class='card-title'
+                {{#if isHot}}<span class='badge bg-warning text-light'>HOT</span>{{/if}}
+                {{#if isNew}}<span class='badge bg-primary text-light'>New</span>{{/if}}>{{title}}</h5>
                 <p class='card-text'>{{description}}</p>
               </div>
             </div>
           </div>
        </div>
     {{/each}}
+  </div>
+</section>
+<hr>
+
+<section>
+  <div class="card">
+    {{#with subscribe}}
+      <h2>{{header}}</h2>
+
+    {{/with}}
   </div>
 </section>
 
