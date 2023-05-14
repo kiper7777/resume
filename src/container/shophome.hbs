@@ -7,7 +7,7 @@
             <a
               class='nav-link'
               aria-current='page'
-              href='{{href}}'
+              href={{href}}
             >{{text}}</a>
           </li>
         {{/each}}
@@ -52,47 +52,90 @@
         <ul class='nav nav-tabs'>
             {{#each tabs}}
               <li class='nav-item'>
-                <a class='nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}' 
+                <a class='nav-link' {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}} 
                 aria-current='page' 
                 href='#'>{{text}}</a>
               </li>
             {{/each}}
         </ul>
+        <br>
+        <div class='row'>
+            {{#each cards}}
+                  <div class='col-4'>
+                    <div class='card' >
+                      <img class='card-img-top' src={{image}}>
+                        <div class='card-body'>
+                        <h5 class='card-title'>
+                        {{#if isHot}}<span class='badge bg-warning text-light'>HOT</span>{{/if}}
+                        {{#if isNew}}<span class='badge bg-primary text-light'>New</span>{{/if}} {{title}}</h5>
+                        <p class='card-text'>{{description}}</p>
+                      </div>
+                    </div>
+                  </div>
+            {{/each}}
+        </div>
       {{/with}}
     </ul>
   </div>
-</section>
-
+</section> 
+<hr> 
 <section>
-  <div class='row'>
-    {{#each cards}}
-          <div class='col-4'>
-            <div class='card'>
-              <img class='card-img-top'/>
-                href={{image}}
-
-              <div class='card-body'>
-                <h5 class='card-title'
-                {{#if isHot}}<span class='badge bg-warning text-light'>HOT</span>{{/if}}
-                {{#if isNew}}<span class='badge bg-primary text-light'>New</span>{{/if}}>{{title}}</h5>
-                <p class='card-text'>{{description}}</p>
-              </div>
-            </div>
-          </div>
-       </div>
-    {{/each}}
-  </div>
-</section>
-<hr>
-
-<section>
-  <div class="card">
+  <div class="card text-bg-dark" >
     {{#with subscribe}}
-      <h2>{{header}}</h2>
-
+    <div class="card-body">
+      <p class="h2">{{header}}</p>
+      <p class="card-text">{{description}}</p>
+        <div>
+          {{#each buttons}}
+            <a href={{link}} class="btn btn-primary">{{text}}</a>
+          {{/each}}
+        </div> 
+    </div>
     {{/with}}
   </div>
 </section>
+<hr>
+<section>
+  <div class="card text-bg-success" >
+    {{#with service}}
+    <div class="card-body text-center">
+      <p class="h2">{{title}}</p>
+      <p class="card-text">{{description}}</p>
+      <div>
+         {{#each buttons}}
+          <a href={{link}} class="btn btn-primary">{{text}}</a>
+         {{/each}} 
+      </div>   
+    </div>
+    {{/with}}
+  </div>
+</section>
+<hr>
+<section>
+  <nav class="nav flex-column">
+    <div class="row">
+    {{#each footer}}
+      <li class="col-2">
+        <a class="nav-link active" aria-current="page" href={{this.link}}>{{this.text}}</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    {{/each}}
+    </div>
+  </nav>
+</section>
+
+
+
+
+<nav class="nav flex-column">
+  <a class="nav-link active" aria-current="page" href="#">Active</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled">Disabled</a>
+</nav>
+
 
 
 
