@@ -87,7 +87,10 @@
       <p class="card-text">{{description}}</p>
         <div>
           {{#each buttons}}
-            <a href={{link}} class="btn btn-primary">{{text}}</a>
+          <div class="mb-2">
+              <a href={{link}} class="btn btn-primary">{{text}}</a>
+          </div>
+            
           {{/each}}
         </div> 
     </div>
@@ -112,15 +115,18 @@
 </section>
 <hr>
 <section>
-  <nav class="nav flex-column">
+  <nav class="nav col-12">
     <div class="row">
     {{#each footer}}
       <li class="col-2">
-        <a class="nav-link active" aria-current="page" href={{this.link}}>{{this.text}}</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled">Disabled</a>
-      </li>
+        <ul>
+          {{#each this}}
+          <li class="col-2">
+            <a class="nav-link active" aria-current="page" href={{this.link}}>{{this.text}}</a>
+          </li>
+          {{/each}}
+        </ul>
+    </div> 
     {{/each}}
     </div>
   </nav>
