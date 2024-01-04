@@ -1,5 +1,62 @@
 <div>
   <ul>
+    {{#with program}}
+      <div><h2>Excursion</h2></div>
+      <br />
+      {{#with excursion}}
+
+        <ul>
+          <li>
+            <div><strong>{{name}}</strong></div>
+            <br />
+            <div><strong>Location</strong></div>
+
+            <ul>
+              {{#with location}}
+                <li>
+                  <div>{{city}}</div>
+                  <div>{{country}}</div>
+                </li>
+              {{/with}}
+            </ul>
+
+            <br />
+            <div>{{date}}</div>
+
+            <br />
+            <div><strong>Program</strong></div>
+
+            {{#each program}}
+              <li>
+                <div>{{name}}</div>
+                <div>{{type}}</div>
+                <div>{{duration}}</div>
+                {{#with details}}
+                  {{#with museum}}
+                    <li>
+                      <div>{{name}}</div>
+                      {{#with location}}
+                        <li>
+                          <div>{{address}}</div>
+                          <div>{{city}}</div>
+                          <div>{{country}}</div>
+                        </li>
+                      {{/with}}
+                      <div></div>
+                    </li>
+                  {{/with}}
+                {{/with}}
+              </li>
+            {{/each}}
+          </li>
+        </ul>
+      {{/with}}
+    {{/with}}
+  </ul>
+</div>
+
+{{!-- <div>
+  <ul>
     {{#with person}}
       <li>
         <div><h2>{{name}}</h2></div>
@@ -182,4 +239,4 @@
       </div>
     {{/with}}
   </ul>
-</div>
+</div> --}}
