@@ -17,16 +17,21 @@
       {{/with}}
     </ul>
     <br />
-
+    <br />
     <div><mark><strong>Types</strong></mark></div>
     <br />
     <div>
       <ul>
         {{#each types}}
-          <li>{{this}}</li>
+
+          <span
+            class='badge text-bg-primary'
+          >{{this}}</span>
+
         {{/each}}
       </ul>
     </div>
+    <br />
     <br />
     <div><mark><strong>Syntax</strong></mark></div>
     <br />
@@ -34,35 +39,45 @@
       <ul>
         {{#with syntax}}
           <li>
-            <div><em>Variables</em></div>
+            <span
+              class='badge text-bg-warning'
+            >Variables</span>
             {{#each variables}}
               ({{this}})
             {{/each}}
           </li>
           <br />
           <li>
-            <div><em>Functions</em></div>
+            <span
+              class='badge text-bg-warning'
+            >Functions</span>
             {{#each functions}}
               ({{this}})
             {{/each}}
           </li>
           <br />
           <li>
-            <div><em>Conditionals</em></div>
+            <span
+              class='badge text-bg-warning'
+            >Conditionals</span>
             {{#each conditionals}}
               ({{this}})
             {{/each}}
           </li>
           <br />
           <li>
-            <div><em>Loops</em></div>
+            <span class='badge text-bg-warning'>Loops</span>
+
             {{#each loops}}
               ({{this}})
             {{/each}}
           </li>
           <br />
           <li>
-            <div><em>Classes</em></div>
+            <span
+              class='badge text-bg-warning'
+            >Classes</span>
+
             {{#each classes}}
               ({{this}})
             {{/each}}
@@ -71,7 +86,54 @@
       </ul>
     </div>
     <br />
+    <br />
+    <div><mark><strong>Features</strong></mark></div>
+    <br />
 
+    <p class='d-inline-flex gap-1'>
+      <a
+        class='btn btn-primary'
+        data-bs-toggle='collapse'
+        href='#collapseExample'
+        role='button'
+        aria-expanded='false'
+        aria-controls='collapseExample'
+      >
+        Features - Link with href
+      </a>
+      <button
+        class='btn btn-primary position-relative'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#collapseExample'
+        aria-expanded='false'
+        aria-controls='collapseExample'
+      >
+        Features - Button with data-bs-target
+        <span
+          class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'
+        >
+          Features
+
+        </span>
+      </button>
+    </p>
+    <div class='collapse' id='collapseExample'>
+      <div class='card card-body'>
+        <div>
+          <ul>
+            {{#each features}}
+              <li>
+                {{this}}
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
     <div><mark><strong>Features</strong></mark></div>
     <br />
     <div>
@@ -84,33 +146,31 @@
       </ul>
     </div>
     <br />
-
+    <br />
     <div><mark><strong>Libraries</strong></mark></div>
     <br />
     <div>
       <ul>
         {{#each libraries}}
-          <li>
-            {{this}}
-          </li>
+          <span class='badge text-bg-dark'>{{this}}</span>
         {{/each}}
       </ul>
     </div>
     <br />
-
+    <br />
     <div><mark><strong>Tools</strong></mark></div>
     <br />
     <div>
       <ul>
         {{#each tools}}
-          <li>
-            {{this}}
-          </li>
+          <span
+            class='badge text-bg-success'
+          >{{this}}</span>
         {{/each}}
       </ul>
     </div>
     <br />
-
+    <br />
     <div><mark><strong>Community</strong></mark></div>
     <br />
     <div>
