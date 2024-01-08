@@ -1,0 +1,217 @@
+<ul>
+  <h1 class='display-3'>{{name}}</h1>
+  <hr />
+  <h6>{{description}}
+    <span class='badge bg-secondary'>{{price}}</span></h6>
+
+  <div class='lead'>{{category}}</div>
+  <hr />
+  <div class='display-6'>Features</div>
+  <br />
+  <ul>
+    {{#with features}}
+      <span class='badge text-bg-success'>Processor</span>
+      <br />
+      {{! <div><strong>Processor</strong></div> }}
+      <ul>
+        {{#with processor}}
+          <span class='badge text-bg-light'>{{brand}}</span>
+          <span class='badge text-bg-light'>{{model}}</span>
+          <span class='badge text-bg-light'>{{speed}}</span>
+          <span class='badge text-bg-light'>{{cores}}</span>
+          <span class='badge text-bg-light'>{{cache}}</span>
+          {{!-- <li>{{brand}}</li>
+          <li>{{model}}</li>
+          <li>{{speed}}</li>
+          <li>{{cores}}</li>
+          <li>{{cache}}</li> --}}
+        {{/with}}
+      </ul>
+      <br /><span
+        class='badge text-bg-success'
+      >Memory</span>
+      {{! <div><strong>Memory</strong></div> }}
+      <ul>
+        {{#with memory}}
+          <span class='badge text-bg-light'>{{type}}</span>
+          <span class='badge text-bg-light'>{{size}}</span>
+          <span class='badge text-bg-light'>{{speed}}</span>
+          {{!-- <li>{{type}}</li>
+          <li>{{size}}</li>
+          <li>{{speed}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <br />
+      <span class='badge text-bg-success'>Storage</span>
+      {{! <div><strong>Storage</strong></div> }}
+      <ul>
+        {{#with storage}}
+          <span class='badge text-bg-light'>{{type}}</span>
+          <span class='badge text-bg-light'>{{size}}</span>
+          {{!-- <li>{{type}}</li>
+          <li>{{size}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <span class='badge text-bg-success'>Display</span>
+      {{! <div><strong>Display</strong></div> }}
+      <ul>
+        {{#with display}}
+          <span class='badge text-bg-light'>{{size}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{resolution}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{technology}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{color_space}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{brightness}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{refresh_rate}}</span>
+          {{!-- <li>{{size}}</li>
+          <li>{{resolution}}</li>
+          <li>{{technology}}</li>
+          <li>{{color_space}}</li>
+          <li>{{brightness}}</li>
+          <li>{{refresh_rate}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <span class='badge text-bg-dark'>Graphics</span>
+      {{! <div><strong>Graphics</strong></div> }}
+      <ul>
+        {{#with graphics}}
+          <span
+            class='badge text-bg-warning'
+          >{{brand}}</span>
+          <span
+            class='badge text-bg-warning'
+          >{{model}}</span>
+          <span
+            class='badge text-bg-warning'
+          >{{memory}}</span>
+          {{!-- <li>{{brand}}</li>
+          <li>{{model}}</li>
+          <li>{{memory}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <span class='badge text-bg-dark'>Ports</span>
+      {{! <div><strong>Ports</strong></div> }}
+      <ul>
+        {{#each ports}}
+          <span
+            class='badge text-bg-warning'
+          >{{type}}</span>
+          <span
+            class='badge text-bg-warning'
+          >{{count}}</span>
+          {{!-- <li>{{type}}</li>
+          <li>{{count}}</li> --}}
+          <span
+            class='badge text-bg-secondary'
+          >features</span>
+          {{! <li>features</li> }}
+          <div>
+            <ul>
+              {{#each features}}
+                <span
+                  class='badge text-bg-light'
+                >{{this}}</span>
+              {{/each}}
+            </ul>
+          </div>
+        {{/each}}
+      </ul>
+      <br />
+      <span class='badge text-bg-primary'>Battery</span>
+      {{! <div><strong>Battery</strong></div> }}
+      <ul>
+        {{#with battery}}
+          <span class='badge text-bg-light'>{{type}}</span>
+          <span
+            class='badge text-bg-light'
+          >{{capacity}}</span>
+          <span class='badge text-bg-light'>{{life}}</span>
+          {{!-- <li>{{type}}</li>
+          <li>{{capacity}}</li>
+          <li>{{life}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <span class='badge text-bg-dark'>Weight:
+        {{weight}}</span>
+      {{!-- <div><strong>Weight: </strong>{{weight}}</div> --}}
+      <br />
+      <br />
+      <span class='badge text-bg-danger'>Dimensions</span>
+      {{! <div><strong>Dimensions</strong></div> }}
+      <ul>
+        {{#with dimensions}}
+          <span
+            class='badge text-bg-light'
+          >{{height}}</span>
+          <span class='badge text-bg-light'>{{width}}</span>
+          <span class='badge text-bg-light'>{{depth}}</span>
+          {{!-- <li>{{height}}</li>
+          <li>{{width}}</li>
+          <li>{{depth}}</li> --}}
+        {{/with}}
+      </ul>
+      <br />
+      <span class='badge text-bg-info'>Operating_system:
+        {{operating_system}}</span>
+      {{!-- <div><strong>Operating_system:
+        </strong>{{operating_system}}</div> --}}
+      <br />
+      <br />
+      <span class='badge text-bg-dark'>Accessories</span>
+      {{! <div><strong>Accessories</strong></div> }}
+      <ul>
+        {{#each accessories}}
+          <span class='badge text-bg-light'>{{name}}</span>
+          <span class='badge text-bg-light'>{{price}}</span>
+          {{!-- <li>{{name}}</li>
+          <li>{{price}}</li> --}}
+          <br />
+        {{/each}}
+      </ul>
+
+    {{/with}}
+  </ul>
+
+</ul>
+
+<hr />
+<br />
+<ul>
+  <p>
+    <button
+      class='btn btn-light'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#collapseWidthExample'
+      aria-expanded='false'
+      aria-controls='collapseWidthExample'
+    >
+      Goodbye!!! (Toggle width collapse)
+    </button>
+  </p>
+  <div style='min-height: 120px;'>
+    <div
+      class='collapse collapse-vertical'
+      id='collapseWidthExample'
+    >
+      <div class='card card-body' style='width: 300px;'>
+        Thank you for your purchase, we look forward to
+        seeing you again!
+      </div>
+    </div>
+  </div>
+</ul>
