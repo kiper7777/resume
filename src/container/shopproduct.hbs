@@ -122,20 +122,23 @@
   {{/with}}
 </div>
 <br>
+<br>
 <hr>
-
+<br>
 <div class="m-2">
   <section>
     <div>
-        {{#with goodsOtherBlock}}
-          <div class='row'>
-              {{#each cards}}
-                    <div class='col-4'>
-                      {{> shopcard}}
-                    </div>
-              {{/each}}
-          </div>
-        {{/with}}
+      {{#with goodsOtherBlock}}
+      <h2 class="text-center">{{title}}</h2>
+      <br>
+        <div class='row'>
+            {{#each cards}}
+                  <div class='col-4'>
+                    {{> shopcard}}
+                  </div>
+            {{/each}}
+        </div>
+      {{/with}}
       </ul>
     </div>
   </section> 
