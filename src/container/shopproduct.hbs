@@ -1,4 +1,4 @@
-
+<div>
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
       {{#each breadcrumb}}
@@ -11,14 +11,16 @@
       {{/each}}
     </ul>
   </nav>
+</div>
 
 <div class="row m-2">
-  <div class="col-5">
+  <div class="col-6">
       {{#with productData}}
       <div>
         <img src='{{img}}' class='card-img-top' alt=''/>
       </div>
       <br />
+
       <div>
         {{#with info}}
           <div class='card'>
@@ -44,10 +46,9 @@
           <br>
         {{/with}}
       </div>
-       
   </div> 
 <br>
-    <div class="col-5">
+    <div class="col-6">
       <div >
         {{#with item}}
           <table class="table">
@@ -74,109 +75,90 @@
       </div>
 
       <div >
+        {{#with param}}
         <ul class="list-group">
-        <li class="list-group-item list-group-item-light">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
+          <li class="list-group-item list-group-item-light">{{title}}</li>
+            {{#each list}}
+              <li class="list-group-item">{{this}}</li>
+            {{/each}}
+        </ul>
+        {{/with}}
       </div>
+
+      <div>
+        {{#with alert}}
+          {{#if isError}}
+          <div class="alert alert-danger" role="alert">
+            {{text}}
+          </div>
+          {{/if}}
+        {{/with}}
+      </div>
+
     </div>   
+
       <section>
         <div class="card p-2">
-        <div>
-          {{#each actionList}}
- 
-            {{#if isWarning}}
-            <button type="button" class="btn btn-warning">{{name}}</button>
-            {{/if}}
-            {{#if isError}}
-            <button type="button" class="btn btn-outline-danger">{{name}}</button>
-            {{/if}}
-            {{#if isSuccess}}
-            <button type="button" class="btn btn-success">{{name}}</button>
-            {{/if}}
-            {{#if isGood}}
-            <button type="button" class="btn btn-outline-success">{{name}}</button>
-            {{/if}}
-          
-          {{/each}}
+          <div>
+            {{#each actionList}}
+  
+              {{#if isWarning}}
+              <button type="button" class="btn btn-warning">{{name}}</button>
+              {{/if}}
+              {{#if isError}}
+              <button type="button" class="btn btn-outline-danger">{{name}}</button>
+              {{/if}}
+              {{#if isSuccess}}
+              <button type="button" class="btn btn-success">{{name}}</button>
+              {{/if}}
+              {{#if isGood}}
+              <button type="button" class="btn btn-outline-success">{{name}}</button>
+              {{/if}}
+            
+            {{/each}}
+          </div>
         </div>
-      </div>
       </section>
   {{/with}}
 </div>
+<br>
+<hr>
 
-
-
-
-
-
-
-<section>
-  {{#with newsData}}
-  <div class="card mb-4">
-    <img src="{{photo}}" class="card-img-top" alt="...">
+<div class="m-2">
+  <section>
     <div>
-      <div class="card-head p-1">
-        {{#with head}}  
-          <h1 class="card-title">{{heading}}</h5>
-          <p class="card-text">{{description}}</p>
-        {{/with}} 
-      </div>
-      <br>
-      <div class="card-body p-1">
-        {{#each body}}
-        <h4>{{title}}</h1>
-        <p>{{text}}</p>
-        {{/each}}
-      </div>
-    </div>
-  </div>
-  {{/with}}
-</section>
-
-<section>
-  {{#with newsOtherBlock}}
-    <h2 class='text-center'>{{title}}</h2>
-<br>
-    <div class='row'>
-      {{#each cards}}
-        <div class='col-3'>
-          <div class='card text-bg-light'>
-            <div class='card-header'>{{title}}
-              {{#if isTop}}<span class='badge text-bg-danger'
-                >Top</span>{{/if}}
-              {{#if isNew}}<span class='badge text-bg-success'
-                >New</span>{{/if}}
-            </div>
-            <div class='card-body'>
-              <p class='card-text'>{{description}}</p>
-            </div>
+        {{#with goodsOtherBlock}}
+          <div class='row'>
+              {{#each cards}}
+                    <div class='col-4'>
+                      {{> shopcard}}
+                    </div>
+              {{/each}}
           </div>
-        </div>
-      {{/each}}
+        {{/with}}
+      </ul>
     </div>
-  {{/with}}
-</section>
-<hr />
-<br>
-<section>
-  <div class="card text-bg-success" >
-    {{#with service}}
-    <div class="card-body text-center">
-      <p class="h2">{{title}}</p>
-      <p class="card-text">{{description}}</p>
-      <div>
-         {{#each buttons}}
-          <a href={{link}} class="btn btn-primary">{{text}}</a>
-         {{/each}} 
-      </div>   
+  </section> 
+
+  <hr />
+  <br>
+  <section>
+    <div class="card text-bg-success" >
+      {{#with service}}
+      <div class="card-body text-center">
+        <p class="h2">{{title}}</p>
+        <p class="card-text">{{description}}</p>
+        <div>
+          {{#each buttons}}
+            <a href={{link}} class="btn btn-primary">{{text}}</a>
+          {{/each}} 
+        </div>   
+      </div>
+      {{/with}}
     </div>
-    {{/with}}
-  </div>
-</section>
+  </section>
+  
+</div>  
 <br>
 <hr>
 
