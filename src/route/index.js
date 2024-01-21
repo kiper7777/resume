@@ -1677,7 +1677,7 @@ router.get('/shoporder', function (req, res) {
       },
       button: [
         {
-          text: 'Підтвердити замовлення',
+          text: 'Підтвердити замовлен',
           isPrimary: true,
         },
         {
