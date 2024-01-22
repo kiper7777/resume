@@ -1,0 +1,15 @@
+  <nav class="nav col-12">
+    <div class="row">
+    {{#each footer}}
+      <li class="col-2">
+        <ul>
+          {{#each this}}
+          <li class="col-2">
+            <a class="nav-link active" aria-current="page" href={{this.link}}>{{this.text}}</a>
+          </li>
+          {{/each}}
+        </ul>
+    </div> 
+    {{/each}}
+    </div>
+  </nav>

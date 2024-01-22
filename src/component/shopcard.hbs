@@ -1,0 +1,14 @@
+<div class='card'>
+  <img class='card-img-top' src={{image}} />
+  <div class='card-body'>
+    <h5 class='card-title'>
+      {{#if isHot}}<span
+          class='badge bg-warning text-light'
+        >HOT</span>{{/if}}
+      {{#if isNew}}<span
+          class='badge bg-primary text-light'
+        >New</span>{{/if}}
+      {{title}}</h5>
+    <p class='card-text'>{{description}}</p>
+  </div>
+</div>
