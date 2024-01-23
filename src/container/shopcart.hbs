@@ -1,0 +1,41 @@
+
+<hr>
+<section>
+  <div>
+    {{#with goodsOtherBlock}}
+    <h3 class="text-center">{{title}}</h3>
+    <br>
+    <div class='row'>
+        {{#each cards}}
+                <div class='col-4'>
+                {{> shopcard}}
+                </div>
+        {{/each}}
+    </div>
+    {{/with}}
+  </div>
+  <br>
+  <hr> 
+</section> 
+
+
+<section>
+  <div class="card text-bg-dark" >
+    {{#with subscribe}}
+    <div class="card-body">
+      <p class="h2">{{header}}</p>
+      <p class="card-text">{{description}}</p>
+        <div>
+          {{#each buttons}}
+          <div class="mb-2">
+              <a href={{link}} class="btn btn-primary">{{text}}</a>
+          </div>
+            
+          {{/each}}
+        </div> 
+    </div>
+    {{/with}}
+  </div>
+</section>
+<br>
+<hr>
