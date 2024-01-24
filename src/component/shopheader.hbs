@@ -1,0 +1,18 @@
+<div class='card'>
+  {{#with navigation}}
+    <ul class='nav'>
+      {{#each links}}
+        <li class='nav-item'>
+          <a
+            class='nav-link'
+            aria-current='page'
+            href={{href}}
+          >{{text}}</a>
+        </li>
+      {{/each}}
+      <li class='nav-item'>
+        <a class='nav-link disabled'>Disabled</a>
+      </li>
+    </ul>
+  {{/with}}
+</div>
