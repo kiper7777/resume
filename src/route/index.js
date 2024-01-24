@@ -2043,7 +2043,7 @@ router.get('/shopcart', function (req, res) {
           isSuccess: true,
         },
         {
-          text: 'Офрмити кредит',
+          text: 'Оформити кредит',
           link: 'https://www.youtube.com/',
           isOutline: true,
         },

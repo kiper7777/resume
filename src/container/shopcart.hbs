@@ -1,5 +1,54 @@
+<br>
+<section>
+  <div>
+    {{#with header}}
+      <h1>{{title}}</h1>
+      {{#with button}}
+        <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+      {{/with}}
+    {{/with}}
+  </div>
+  <br>
+  <br>
+  <hr>
+</section>
+<br>
 
-<hr>
+<section>
+  <div>
+      {{#each goodsBlock}} 
+        {{> cartGoodsItem}}
+        <br>
+      {{/each}}
+    </div>
+  </div>
+  <br>
+  <hr>
+</section>
+
+<section>
+  <div>
+    {{#with total}}
+      <h3>{{title}}</h3>
+      <div style="font-size: 38px;">{{amount}}</div>
+      <div>{{delivery}}</div>
+      <br>
+      {{#each buttons}}
+        {{#if isSuccess}}
+        <a href="{{link}}" class="btn btn-success">{{text}}</a>
+        
+        {{/if}}
+        <br>
+        {{#if isOutline}}
+        <a href="{{link}}" class="btn btn-outline-success">{{text}}</a>
+        {{/if}}
+      {{/each}}
+    {{/with}}
+  </div>
+  <br>
+  <hr>
+</section>
+
 <section>
   <div>
     {{#with goodsOtherBlock}}
@@ -25,17 +74,18 @@
     <div class="card-body">
       <p class="h2">{{header}}</p>
       <p class="card-text">{{description}}</p>
-        <div>
-          {{#each buttons}}
-          <div class="mb-2">
-              <a href={{link}} class="btn btn-primary">{{text}}</a>
-          </div>
-            
-          {{/each}}
-        </div> 
+      <div>
+        {{#each buttons}}
+        <div class="mb-2">
+            <a href={{link}} class="btn btn-primary">{{text}}</a>
+        </div>
+        {{/each}}
+      </div> 
     </div>
     {{/with}}
   </div>
+  <br>
+  <br>
+  <hr>
 </section>
-<br>
-<hr>
+
