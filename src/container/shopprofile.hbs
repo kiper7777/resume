@@ -1,0 +1,20 @@
+<br>
+<section>
+    <h1>{{header}}</h1>
+</section>
+<section>
+    {{#with purchase}}
+        
+        <ul class="nav nav-tabs">
+            {{#each tabs}}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">{{this}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">{{this}}</a>
+            </li>
+            {{/each}}
+        </ul>
+        
+    {{/with}}
+</section>
