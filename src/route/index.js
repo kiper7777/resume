@@ -2321,7 +2321,7 @@ router.get('/shopprofile', function (req, res) {
           },
         },
       },
-      buttons: [
+        buttons: [
         {
           text: 'Редагувати',
           link: 'https://www.youtube.com/',
