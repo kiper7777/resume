@@ -106,77 +106,9 @@
 </section>
 
 <section>
-	<div>
-		{{#each reviewList}}
-		  <br>
-		  <div class="card p-4">
-				<div class="card p-2">
-					{{#with title}}
-					  <h5>{{userName}}</h5>
-						<p>{{caption}}</p>
-						<p>{{date}}</p>
-					{{/with}}
-				</div>
+	{{> reviewItem}}
 
-				<div class="card p-2">
-					{{#with reviewBody}}
-					  {{#with seller}}
-						  <div>{{title}}: {{value}}</div>
-					  {{/with}}
-						<br>
-
-						{{#with rating}}
-						  <div>{{title}}: {{value}}</div>
-					  {{/with}}
-						<br>
-
-						{{#each text}}
-						  <div>{{this}}</div>
-							<br>
-					  {{/each}}
-
-						{{#with advantages}}
-						  <div><strong>{{title}}:</strong></div>
-							<div>{{text}}</div>
-					  {{/with}}
-						<br>
-
-						{{#with disadvantages}}
-						  <div><strong>{{title}}:</strong></div>
-							<div>{{text}}</div>
-					  {{/with}}
-						<br>
-
-            <div class="row p-1">
-							{{#each images}}
-								<img style="width: 6rem;" src='{{this}}'/>
-							{{/each}}
-            </div>
-						<br>
-						<br>
-
-            <div class="row">
-							<div class="col-1"></div>
-
-							<div class="col-11">
-								{{#each coments}}
-									<div class="card p-2">
-										<h5>{{userName}}</h5>
-										<p>{{date}}</p>
-										<p>{{text}}</p>
-									</div>
-									<br>
-								{{/each}}
-							</div>
-						</div>
-
-					{{/with}}
-				</div>
-				<br>
-			</div>
-		{{/each}}
-	</div>
-
+    <br>
 		<hr>
 		<br>
 		<div>
