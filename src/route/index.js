@@ -1149,6 +1149,436 @@ router.get('/shophome', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopnews', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopnews', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'News', url: 'https://www.google.com/' },
+      { name: 'Today', url: 'https://github.com/' },
+      { name: 'About cats', url: null },
+    ],
+
+    newsData: {
+      photo: 'https://picsum.photos/400/200',
+
+      head: {
+        heading: 'About cats',
+        description:
+          "Cats are adorable and beloved pets that have been domesticated for thousands of years. They are known for their independent and playful nature, as well as their agility and hunting skills. With their soft fur, purring, and cuddling, cats make great companions and can bring joy and relaxation to their owners. From domestic short-hairs to exotic breeds, cats come in many shapes, sizes, and colors, each with their own unique personalities. Whether they are napping in a sunny spot or chasing a toy, cats always bring a smile to their owner's faces.",
+      },
+
+      body: [
+        {
+          title: 'Cats have a keen sense of hearing',
+          text: 'With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.',
+        },
+        {
+          title: 'Cats are natural hunters',
+          text: 'Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.',
+        },
+        {
+          title: 'Cats are independent creatures',
+          text: "Cats are known for their independent nature, and unlike dogs, they don't require constant attention and affection from their owners. They are perfectly content to entertain themselves with toys and explore their surroundings on their own.",
+        },
+        {
+          title: 'Cats have a unique way of communicating',
+          text: 'From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.',
+        },
+        {
+          title: 'Cats are good for your health',
+          text: 'Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.',
+        },
+      ],
+    },
+
+    newsOtherBlock: {
+      title: 'See other news',
+      cards: [
+        {
+          title: 'NASA Launches New Mars Rover',
+          description:
+            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
+          isTop: false,
+          isNew: true,
+        },
+        {
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
+          description:
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
+          isTop: false,
+          isNew: false,
+        },
+        {
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
+          description:
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
+          isTop: false,
+          isNew: false,
+        },
+        {
+          title: 'Amazon Expands Grocery Delivery Service',
+          description:
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
+          isTop: false,
+          isNew: true,
+        },
+      ],
+    },
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopproduct', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopproduct', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
+    ],
+
+    productData: {
+      img: 'https://picsum.photos/400/200',
+
+      info: {
+        title: 'Product PC Asus 331 BC 671',
+        about:
+          "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        price: '1000$',
+
+        category: [
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
+        ],
+      },
+
+      actionList: [
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Like', isSuccess: true },
+        { name: 'Share', isGood: true },
+      ],
+
+      item: {
+        head: ['#', 'color', 'price'],
+
+        body: [
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
+        ],
+      },
+
+      param: {
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
+      },
+
+      alert: {
+        isError: true,
+        text: 'Danger! This is a danger alert — check it out!',
+      },
+    },
+
+    goodsOtherBlock: {
+      title: 'See other products',
+      cards: [
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          isNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          isNew: false,
+        },
+      ],
+    },
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+          rel: 'show-more',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/shoporder', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1417,6 +1847,842 @@ router.get('/shoporder', function (req, res) {
         ],
       },
     },
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopcart', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopcart', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    header: {
+      title: 'Кошик',
+      button: {
+        text: 'Продовжити покупки',
+        link: 'https://www.youtube.com/',
+      },
+    },
+
+    goodsBlock: [
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Samsung Galaxy S21 Ultra ',
+        description:
+          'екран 6.8", процесор Exynos 2100/Snapdragon 888, 12 ГБ ОЗУ, камера 108 МП, акумулятор 5000 мАг',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Ноутбук Dell XPS 13',
+        description:
+          'екран 13.3", процесор Intel Core i7-1165G7, 16 ГБ ОЗУ, SSD на 512 ГБ, вага 1.2 кг.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Телевізор LG OLED CX',
+        description:
+          'екран 55", роздільна здатність 4K, Smart TV, HDR, звук Dolby Atmos, 4 HDMI порти, 3 USB порти.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+      {
+        image: 'https://picsum.photos/110/110',
+        name: 'Навушники Sony WH-1000XM4',
+        description:
+          'Bluetooth 5.0, активне шумозаглушення, 30 годин автономної роботи, сенсорне управління, вага 254 г.',
+        price: { title: 'Ціна', value: '25 000 ₴' },
+
+        amount: '1 шт.',
+        buttons: [
+          { text: 'Додати', isPrimary: true },
+          { text: 'Видалити', isDanger: true },
+        ],
+      },
+    ],
+
+    total: {
+      title: 'Сума замовлення',
+      amount: '75 000 ₴',
+      delivery: 'Без доставки',
+      buttons: [
+        {
+          text: 'Оформити замовлення',
+          link: 'https://www.youtube.com/',
+          isSuccess: true,
+        },
+        {
+          text: 'Оформити кредит',
+          link: 'https://www.youtube.com/',
+          isOutline: true,
+        },
+      ],
+    },
+
+    goodsOtherBlock: {
+      title: 'See other products',
+      cards: [
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          idNew: false,
+        },
+      ],
+    },
+
+    subscribe: {
+      header: 'Unlock Premium Content',
+      description:
+        'Subscribe to access exclusive content and features.',
+      buttons: [
+        {
+          text: 'Register Now',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Buy Subscription',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    header: 'Мої замовлення',
+
+    purchase: {
+      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+      actionBlock: {
+        input: { placeholder: 'Placeholder' },
+        buttons: [
+          {
+            text: 'Знайти',
+            link: 'https://www.youtube.com/',
+            isSuccess: true,
+          },
+          {
+            text: 'Виділити все',
+            link: 'https://www.youtube.com/',
+            isOutline: true,
+          },
+          {
+            text: 'Очистити все',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      itemList: [
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: ['https://picsum.photos/110/100'],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+      ],
+    },
+    userInfo: {
+      title: 'Особиста інформація',
+      profileData: {
+        title: 'Особисті дані',
+        fullName: {
+          surname: {
+            title: 'Прізвище',
+            value: 'Іванов',
+          },
+          name: {
+            title: 'Ім’я',
+            value: 'Іван',
+          },
+          middleName: {
+            title: 'По-батькові',
+            value: 'Іванович',
+          },
+        },
+        otherInfo: {
+          birthday: {
+            title: 'Дата народження',
+            value: '01.01.2000',
+          },
+          sex: {
+            title: 'Стать',
+            value: 'Чоловіча',
+          },
+          language: {
+            title: 'Мова',
+            value: 'Українська',
+          },
+        },
+      },
+      buttons: [
+        {
+          text: 'Редагувати',
+          link: 'https://www.youtube.com/',
+          isPrimary: true,
+        },
+        {
+          text: 'Очистити',
+          link: 'https://www.youtube.com/',
+          isSecondary: true,
+        },
+        {
+          text: 'Видалити',
+          link: 'https://www.youtube.com/',
+          isDanger: true,
+        },
+      ],
+      recipients: {
+        title: 'Отримувачі',
+        users: [
+          {
+            name: 'Іванов Іван Іванович',
+            phone: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+          {
+            name: 'Петров Петро Петрович',
+            phone: '+38 (098) 111 11 11',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+        ],
+      },
+      contacts: {
+        title: 'Контакти',
+        contactData: [
+          {
+            title: 'Номер телефону',
+            value: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+              isPrimary: true,
+            },
+          },
+          {
+            title: 'Додатковий номер телефону',
+            value: '+38 (098) 111 11 11',
+            button: {
+              text: 'Очистити',
+              link: 'https://www.youtube.com/',
+              isSecondary: true,
+            },
+          },
+          {
+            title: 'Електронна адреса',
+            value: 'ivanivanov@ukr.net',
+            button: {
+              text: 'Видалити',
+              link: 'https://www.youtube.com/',
+              isDanger: true,
+            },
+          },
+        ],
+      },
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopreview', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopreview', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+    formBlock: {
+      header: 'Відгуки покупців про Ноут',
+      rating: {
+        title: 'Оцінка',
+        value: '4.5/5',
+      },
+      actionBlock: {
+        tabs: [
+          { text: 'Про товар' },
+          { text: 'Характеристики' },
+          { text: 'Відгуки', isActive: true },
+        ],
+        report: {
+          title: 'Залиште відгук про товар',
+          button: {
+            text: 'Написати відгук',
+            link: 'https://www.youtube.com/',
+          },
+        },
+      },
+      feedbackBlock: {
+        title:
+          'Хочете поділитись своєю думкою про наш магазин?',
+        buttons: [
+          {
+            text: 'Додати відгук',
+            isWarning: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Позитивні відгуки',
+            isSuccess: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Негативні відгуки',
+            isDanger: true,
+            link: 'https://www.youtube.com/',
+          },
+        ],
+      },
+      goodsInfo: {
+        photo: 'https://picsum.photos/110/100',
+        name: 'Ноут Asus',
+        price: '25 000 ₴',
+        inMarket: true,
+        buttons: [
+          {
+            text: 'Купити',
+            isPrimary: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Купити в кредит',
+            isSecondary: true,
+            link: 'https://www.youtube.com/',
+          },
+        ],
+        seller: {
+          title: 'Продавець',
+          value: 'Machinery',
+        },
+      },
+    },
+
+    reviewList: [
+      {
+        title: {
+          userName: 'Іван Іванов',
+          caption: 'Відгук покупця',
+          date: '1 січня 2023',
+        },
+        reviewBody: {
+          seller: {
+            title: 'Продавець',
+            value: 'Machinery',
+          },
+          rating: {
+            title: 'Оцінка',
+            value: '5/5',
+          },
+          text: [
+            "Цей ноутбук має гарний дизайн та добре виконує свої основні функції. Швидкість роботи та продуктивність в цілому є на задовільному рівні. Крім того, присутній достатній обсяг пам'яті та потужність акумулятора.",
+            ' Однак, можливі проблеми з перегрівом під час тривалого використання, та може бути недостатньої ємності жорсткого диска для потреб користувача. Крім того, ціна може бути дещо високою порівняно з аналогічними моделями.',
+          ],
+          advantages: {
+            title: 'Переваги',
+            text: 'Дизайн, швидкість роботи, обсяг пам’яті, акумулятор',
+          },
+          disadvantages: {
+            title: 'Недоліки',
+            text: 'Перегрів, ємкість жосткого диску',
+          },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          coments: [
+            {
+              userName: 'Користувач',
+              date: '1 січня 2023',
+              text: 'Дякую за відгук, я подумаю про недоліки, про які ви згадували, перш ніж зробити покупку.',
+            },
+            {
+              userName: 'Користувач',
+              date: '3 січня 2023',
+              text: 'Дякую за корисний відгук! Це допомогло мені зробити вибір щодо покупки ноутбука.',
+            },
+            {
+              userName: 'Користувач',
+              date: '10 січня 2023',
+              text: 'Дякую за відгук, але я хотів би дізнатися більше деталей про проблеми з перегрівом, щоб зробити зважений вибір перед покупкою.',
+            },
+          ],
+        },
+      },
+      {
+        title: {
+          userName: 'Петро Петров',
+          caption: 'Відгук покупця',
+          date: '1 січня 2023',
+        },
+        reviewBody: {
+          seller: {
+            title: 'Продавець',
+            value: 'Machinery',
+          },
+          rating: {
+            title: 'Оцінка',
+            value: '5/5',
+          },
+          text: [
+            "Цей ноутбук має гарний дизайн та добре виконує свої основні функції. Швидкість роботи та продуктивність в цілому є на задовільному рівні. Крім того, присутній достатній обсяг пам'яті та потужність акумулятора.",
+          ],
+          advantages: {
+            title: 'Переваги',
+            text: 'Обсяг пам’яті, акумулятор',
+          },
+          disadvantages: {
+            title: 'Недоліки',
+            text: 'Не виявлено',
+          },
+          images: ['https://picsum.photos/110/100'],
+          coments: [
+            {
+              userName: 'Користувач',
+              date: '1 січня 2023',
+              text: 'Дякую за відгук, я подумаю про недоліки, про які ви згадували, перш ніж зробити покупку.',
+            },
+          ],
+        },
+      },
+    ],
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
     footer: [
       [
         {
