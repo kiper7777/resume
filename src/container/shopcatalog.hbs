@@ -1,0 +1,129 @@
+<div>
+  <nav aria-label='breadcrumb'>
+    <ul class='breadcrumb'>
+      {{#each breadcrumb}}
+
+      {{#if @last}}
+      <li class='breadcrumb-item active' aria-current='page'>{{name}}</li>
+      {{else}}
+      <li class='breadcrumb-item'><a style='text-decoration: none;' href='{{url}}'>{{name}}</a></li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </nav>
+</div>
+
+<div class='p-3'>
+  <h1>{{header}}</h1>
+</div>
+
+<div>
+  <div class='row p-3'>
+    {{#each sortBlock}}
+    <div class='col-3'>
+      <select class='form-select' aria-label='Default select example'>
+        <option selected>{{placeholder}}</option>
+        {{#each options}}
+        <option value='{{value}}'>{{text}}</option>
+        {{/each}}
+      </select>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-4 p-3'>
+    <div class='card'>
+      {{#with filterBlock}}
+      <div class='p-2'>
+        {{#with sellers}}
+        <h6>{{title}}</h6>
+        {{#each list}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        <hr />
+        {{/with}}
+      </div>
+
+      <div class='p-2'>
+        {{#with brands}}
+        <h6>{{title}}</h6>
+        {{#with input}}
+        <input class='form-control' type='text' placeholder='{{placeholder}}' aria-label='default input example' />
+        {{/with}}
+        <br />
+
+        {{#each options}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        {{/with}}
+        <hr />
+      </div>
+
+      <div class='p-2'>
+        {{#with price}}
+        <h6>{{title}}</h6>
+        {{#with range}}
+        <input class='form-control' type='text' placeholder='{{from}}' aria-label='default input example' />
+        <br />
+        <input class='form-control' type='text' placeholder='{{to}}' aria-label='default input example' />
+        {{/with}}
+        <br />
+
+        {{#with button}}
+        <a href='{{link}}' type='button' class='btn btn-outline-secondary'>{{text}}</a>
+        {{/with}}
+        <hr />
+        {{/with}}
+      </div>
+
+      <div class='p-2'>
+        {{#each filterList}}
+        <h6>{{title}}</h6>
+        {{#each options}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        <hr />
+        {{/each}}
+      </div>
+
+      {{/with}}
+    </div>
+
+  </div>
+
+  <div class='col-8 p-1 g-2'>
+    <div class="row">
+      {{#each goodsList}}
+        {{> catalogItem}}
+      {{/each}}
+    </div>
+  </div>
+
+
+</div>
+
+<section>
+  <br>
+  <div>
+    {{> shopaction}}
+  </div>
+  <br>
+  <hr>
+</section>
