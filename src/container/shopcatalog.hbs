@@ -3,17 +3,11 @@
     <ul class='breadcrumb'>
       {{#each breadcrumb}}
 
-        {{#if @last}}
-          <li
-            class='breadcrumb-item active'
-            aria-current='page'
-          >{{name}}</li>
-        {{else}}
-          <li class='breadcrumb-item'><a
-              style='text-decoration: none;'
-              href='{{url}}'
-            >{{name}}</a></li>
-        {{/if}}
+      {{#if @last}}
+      <li class='breadcrumb-item active' aria-current='page'>{{name}}</li>
+      {{else}}
+      <li class='breadcrumb-item'><a style='text-decoration: none;' href='{{url}}'>{{name}}</a></li>
+      {{/if}}
       {{/each}}
     </ul>
   </nav>
@@ -26,63 +20,149 @@
 <div>
   <div class='row p-3'>
     {{#each sortBlock}}
-      <div class='col-4'>
-        <select
-          class='form-select'
-          aria-label='Default select example'
-        >
-          <option selected>{{placeholder}}</option>
-          {{#each options}}
-            <option value='{{value}}'>{{text}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <div class='col-3'>
+      <select class='form-select' aria-label='Default select example'>
+        <option selected>{{placeholder}}</option>
+        {{#each options}}
+        <option value='{{value}}'>{{text}}</option>
+        {{/each}}
+      </select>
+    </div>
     {{/each}}
   </div>
 </div>
 
-<div>
+<div class="row">
   <div class='col-4 p-3'>
     <div class='card'>
       {{#with filterBlock}}
-        <div class='p-2'>
-          {{#with sellers}}
-            <h6>{{title}}</h6>
-            {{#each list}}
-              <div class='form-check'>
-                <input
-                  class='form-check-input'
-                  type='checkbox'
-                  value=''
-                  id='flexCheckDefault'
-                />
-                <label
-                  class='form-check-label'
-                  for='flexCheckDefault'
-                >
-                  {{value}}
-                </label>
-              </div>
-              <div class='form-check'>
-                <input
-                  class='form-check-input'
-                  type='checkbox'
-                  value=''
-                  id='flexCheckChecked'
-                  checked
-                />
-                <label
-                  class='form-check-label'
-                  for='flexCheckChecked'
-                >
-                  Checked checkbox
-                </label>
-              </div>
-            {{/each}}
-          {{/with}}
+      <div class='p-2'>
+        {{#with sellers}}
+        <h6>{{title}}</h6>
+        {{#each list}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
         </div>
+        {{/each}}
+        <hr />
+        {{/with}}
+      </div>
+
+      <div class='p-2'>
+        {{#with brands}}
+        <h6>{{title}}</h6>
+        {{#with input}}
+        <input class='form-control' type='text' placeholder='{{placeholder}}' aria-label='default input example' />
+        {{/with}}
+        <br />
+
+        {{#each options}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        {{/with}}
+        <hr />
+      </div>
+
+      <div class='p-2'>
+        {{#with price}}
+        <h6>{{title}}</h6>
+        {{#with range}}
+        <input class='form-control' type='text' placeholder='{{from}}' aria-label='default input example' />
+        <br />
+        <input class='form-control' type='text' placeholder='{{to}}' aria-label='default input example' />
+        {{/with}}
+        <br />
+
+        {{#with button}}
+        <a href='{{link}}' type='button' class='btn btn-outline-secondary'>{{text}}</a>
+        {{/with}}
+        <hr />
+        {{/with}}
+      </div>
+
+      <div class='p-2'>
+        {{#each filterList}}
+        <h6>{{title}}</h6>
+        {{#each options}}
+        <div class='form-check'>
+          <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+          <label class='form-check-label' for='flexCheckDefault'>
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        <hr />
+        {{/each}}
+      </div>
+
       {{/with}}
     </div>
 
   </div>
+
+  <div class='col-8 p-3'>
+    <div class="row">
+      {{#each goodsList}}
+        <div class="card m-1" style="width: 14rem;">
+          <img src="{{img}}" class="card-img-top" alt="...">
+          <div class="p-2">
+            {{#if isHot}}
+            <span class="badge rounded-pill text-bg-warning">HOT!</span>
+            {{/if}}
+            {{#if isNew}}
+            <span class="badge rounded-pill text-bg-primary">Нове</span>
+            {{/if}}
+            <br>
+            
+            {{#if isFast}}
+            <span class="badge text-bg-success">Швидка доставка</span>
+            {{/if}}
+            <br>
+            
+            {{#if isFree}}
+            <span class="badge text-bg-secondary">Безкоштовна доставка</span>
+            {{/if}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            {{#with review}}
+              <p>{{amount}}: {{text}}</p>
+            {{/with}}
+            <h3>{{price}}</h3>
+            <div>{{delivery}}</div>
+            <br>
+            {{#each buttons}}
+              <div class="m-2">
+                {{#if isPrimary}}
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                {{/if}}
+                {{#if isSecondary}}
+                <a href="{{link}}" class="btn btn-secondary">{{text}}</a>
+                {{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+
 </div>
+
+<section>
+  <br>
+  <div>
+    {{> shopaction}}
+  </div>
+  <br>
+  <hr>
+</section>
