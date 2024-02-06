@@ -32,16 +32,16 @@ var footer = {
 
 // ================================================================
 
-// router.get Створює нам один ентпоїнт
+// // router.get Створює нам один ентпоїнт
 
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
+// //           ↙ тут вводимо шлях (PATH) до сторінки
+// router.get('/', function (req, res) {
+//   // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
-})
+//   //            ↙ cюди вводимо назву файлу з сontainer
+//   res.render('index', {})
+//   //                  ↑↑ сюди вводимо JSON дані
+// })
 
 // ================================================================
 
@@ -3151,6 +3151,103 @@ router.get('/shopcatalog', function (req, res) {
         },
       ],
     ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    layout: 'index',
+    form: {
+      head: {
+        name: 'Dmytro Kiperman',
+        project_name: 'Resume project',
+      },
+
+      list: {
+        title: 'Список сторінок',
+        description:
+          'Тут вам потрібно написати інформацію про ваш проект. Поки що можна написати будь-який текст.',
+        buttons: [
+          {
+            text: 'shopproduct',
+            link: 'http://localhost:3000/shopproduct',
+          },
+          {
+            text: 'shoporder',
+            link: 'http://localhost:3000/shoporder',
+          },
+          {
+            text: 'shopcatalog',
+            link: 'http://localhost:3000/shopcatalog',
+          },
+          {
+            text: 'shopreview',
+            link: 'http://localhost:3000/shopreview',
+          },
+          {
+            text: 'shopprofile',
+            link: 'http://localhost:3000/shopprofile',
+          },
+          {
+            text: 'shopnews',
+            link: 'http://localhost:3000/shopnews',
+          },
+          {
+            text: 'shophome',
+            link: 'http://localhost:3000/shophome',
+          },
+          {
+            text: 'shopcart',
+            link: 'http://localhost:3000/shopcart',
+          },
+          {
+            text: 'task31',
+            link: 'http://localhost:3000/task31',
+          },
+          {
+            text: 'bootstrap',
+            link: 'http://localhost:3000/bootstrap',
+          },
+          {
+            text: 'js',
+            link: 'http://localhost:3000/js',
+          },
+          {
+            text: 'person',
+            link: 'http://localhost:3000/person',
+          },
+          {
+            text: 'program',
+            link: 'http://localhost:3000/program',
+          },
+          {
+            text: 'education',
+            link: 'http://localhost:3000/education',
+          },
+          {
+            text: 'summary',
+            link: 'http://localhost:3000/summary',
+          },
+          {
+            text: 'skills',
+            link: 'http://localhost:3000/skills',
+          },
+          {
+            text: 'work',
+            link: 'http://localhost:3000/work',
+          },
+        ],
+      },
+    },
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
