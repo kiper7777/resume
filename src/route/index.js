@@ -3179,71 +3179,71 @@ router.get('/index', function (req, res) {
         buttons: [
           {
             text: 'shopproduct',
-            link: 'http://localhost:3000/shopproduct',
+            link: '/shopproduct',
           },
           {
             text: 'shoporder',
-            link: 'http://localhost:3000/shoporder',
+            link: '/shoporder',
           },
           {
             text: 'shopcatalog',
-            link: 'http://localhost:3000/shopcatalog',
+            link: '/shopcatalog',
           },
           {
             text: 'shopreview',
-            link: 'http://localhost:3000/shopreview',
+            link: '/shopreview',
           },
           {
             text: 'shopprofile',
-            link: 'http://localhost:3000/shopprofile',
+            link: '/shopprofile',
           },
           {
             text: 'shopnews',
-            link: 'http://localhost:3000/shopnews',
+            link: '/shopnews',
           },
           {
             text: 'shophome',
-            link: 'http://localhost:3000/shophome',
+            link: '/shophome',
           },
           {
             text: 'shopcart',
-            link: 'http://localhost:3000/shopcart',
+            link: '/shopcart',
           },
           {
             text: 'task31',
-            link: 'http://localhost:3000/task31',
+            link: '/task31',
           },
           {
             text: 'bootstrap',
-            link: 'http://localhost:3000/bootstrap',
+            link: '/bootstrap',
           },
           {
             text: 'js',
-            link: 'http://localhost:3000/js',
+            link: '/js',
           },
           {
             text: 'person',
-            link: 'http://localhost:3000/person',
+            link: '/person',
           },
           {
             text: 'program',
-            link: 'http://localhost:3000/program',
+            link: '/program',
           },
           {
             text: 'education',
-            link: 'http://localhost:3000/education',
+            link: '/education',
           },
           {
             text: 'summary',
-            link: 'http://localhost:3000/summary',
+            link: '/summary',
           },
           {
             text: 'skills',
-            link: 'http://localhost:3000/skills',
+            link: '/skills',
           },
           {
             text: 'work',
-            link: 'http://localhost:3000/work',
+            link: '/work',
           },
         ],
       },
