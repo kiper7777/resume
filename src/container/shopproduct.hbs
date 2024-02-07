@@ -1,0 +1,174 @@
+<div>
+  <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+      {{#each breadcrumb}}
+      
+      {{#if @last}} 
+      <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+      {{else}}
+      <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </nav>
+</div>
+
+<div class="row m-2">
+  <div class="col-6">
+      {{#with productData}}
+      <div>
+        <img src='{{img}}' class='card-img-top' alt=''/>
+      </div>
+      <br />
+
+      <div>
+        {{#with info}}
+          <div class='card'>
+            <div class='card-body'>
+              <h5 class='card-title'>{{title}}</h5>
+              <p class='card-text'>{{about}}</p>
+              <h4><strong>{{price}}</strong></h4>
+              <div>
+                {{#each category}}
+                {{#if isHot}}
+                <span class="badge rounded-pill text-bg-warning">{{name}}</span>
+                {{/if}}
+                {{#if isNew}}
+                <span class="badge rounded-pill text-bg-primary">{{name}}</span>
+                {{/if}}
+                {{#if isBonus}}
+                <span class="badge rounded-pill text-bg-info">{{name}}</span>
+                {{/if}}
+                {{/each}}
+              </div>
+            </div>
+          </div>
+          <br>
+        {{/with}}
+      </div>
+  </div> 
+<br>
+    <div class="col-6">
+      <div >
+        {{#with item}}
+          <table class="table">
+            <thead>
+              <tr>
+                {{#each head}}
+                <th>{{this}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+             <tbody>
+              {{#each body}}
+              <tr>
+                {{#with this}}
+                <th>{{this.[0]}}</th>
+                <td>{{this.[1]}}</td>
+                <td>{{this.[2]}}</td>
+                {{/with}}
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        {{/with}}
+      </div>
+
+      <div >
+        {{#with param}}
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-light">{{title}}</li>
+            {{#each list}}
+              <li class="list-group-item">{{this}}</li>
+            {{/each}}
+        </ul>
+        {{/with}}
+      </div>
+<br>
+      <div>
+        {{#with alert}}
+          {{#if isError}}
+          <div class="alert alert-danger" role="alert">
+            {{text}}
+          </div>
+          {{/if}}
+        {{/with}}
+      </div>
+
+    </div>   
+
+      <section>
+        <div class="card p-2">
+          <div>
+            {{#each actionList}}
+  
+              {{#if isWarning}}
+              <button  style="width: 154px;" type="button" class="btn btn-warning">{{name}}</button>
+              {{/if}}
+              {{#if isError}}
+              <button style="width: 154px;" type="button" class="btn btn-outline-danger">{{name}}</button>
+              {{/if}}
+              {{#if isSuccess}}
+              <button style="width: 154px;" type="button" class="btn btn-success">{{name}}</button>
+              {{/if}}
+              {{#if isGood}}
+              <button style="width: 154px;" type="button" class="btn btn-outline-success">{{name}}</button>
+              {{/if}}
+            
+            {{/each}}
+          </div>
+        </div>
+      </section>
+  {{/with}}
+</div>
+<br>
+
+<hr>
+
+<div class="m-2">
+  <section>
+    <div>
+      {{#with goodsOtherBlock}}
+      <h2 class="text-center">{{title}}</h2>
+      <br>
+        <div class='row'>
+            {{#each cards}}
+                  <div class='col-4'>
+                    {{> shopcard}}
+                  </div>
+            {{/each}}
+        </div>
+      {{/with}}
+      </ul>
+    </div>
+  </section> 
+
+  <hr />
+  <br>
+  <section>
+    <div class="card text-bg-success" >
+      {{#with service}}
+      <div class="card-body text-center">
+        <p class="h2">{{title}}</p>
+        <p class="card-text">{{description}}</p>
+        <div>
+          {{#each buttons}}
+            <a href={{link}} class="btn btn-primary">{{text}}</a>
+          {{/each}} 
+        </div>   
+      </div>
+      {{/with}}
+    </div>
+  </section>
+  
+</div>  
+<br>
+<hr>
+
+
+
+
+
+
+
+
